@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using System.Net.Http;
-using System.Net.Http.Description;
-using System.Data;
-using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
+﻿using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using BTA_CS.Entities;
+using System.Web.Http;
+using System.Web.Http.Description;
 
 namespace BTA_CS.Controllers
 {
@@ -46,7 +39,7 @@ namespace BTA_CS.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (id != bus.Id)
+            if (id != bus.ID)
             {
                 return BadRequest();
             }

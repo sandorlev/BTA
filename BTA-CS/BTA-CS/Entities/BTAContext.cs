@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
+using System.Web.Configuration;
 
 namespace BTA_CS.Entities
 {
-    public class BTAContext : DbContext
+    public class BTAContext : WebContext
     {
         // You can add custom code to this file. Changes will not be overwritten.
         // 
