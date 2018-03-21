@@ -1,0 +1,2 @@
+/Users/emanuelnae/Desktop/BusTransportationApp/BTA-CS/BTA-CS/obj/Debug/BTA-CS.csproj.CoreCompileInputs.cache
+/Users/emanuelnae/Desktop/BusTransportationApp/BTA-CS/BTA-CS/obj/Debug/BTA-CS.csprojResolveAssemblyReference.cache

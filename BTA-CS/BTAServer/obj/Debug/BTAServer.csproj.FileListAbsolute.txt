@@ -1,0 +1,7 @@
+/Users/emanuelnae/Desktop/BusTransportationApp/BTA-CS/BTAServer/bin/Debug/BTAServer.exe.config
+/Users/emanuelnae/Desktop/BusTransportationApp/BTA-CS/BTAServer/bin/Debug/BTAServer.exe
+/Users/emanuelnae/Desktop/BusTransportationApp/BTA-CS/BTAServer/bin/Debug/BTAServer.pdb
+/Users/emanuelnae/Desktop/BusTransportationApp/BTA-CS/BTAServer/obj/Debug/BTAServer.csprojResolveAssemblyReference.cache
+/Users/emanuelnae/Desktop/BusTransportationApp/BTA-CS/BTAServer/obj/Debug/BTAServer.csproj.CoreCompileInputs.cache
+/Users/emanuelnae/Desktop/BusTransportationApp/BTA-CS/BTAServer/obj/Debug/BTAServer.exe
+/Users/emanuelnae/Desktop/BusTransportationApp/BTA-CS/BTAServer/obj/Debug/BTAServer.pdb

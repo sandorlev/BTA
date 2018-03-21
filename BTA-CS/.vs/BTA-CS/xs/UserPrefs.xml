@@ -1,0 +1,24 @@
+﻿<Properties StartupConfiguration="{948C36EB-2EB1-49CE-B627-55A9E52F9465}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="BTAServer/Server.cs">
+    <Files>
+      <File FileName="BTA-CS/Controllers/BusController.cs" Line="35" Column="14" />
+      <File FileName="BTA-CS/Controllers/HomeController.cs" Line="21" Column="10" />
+      <File FileName="BTA-CS/Controllers/StopController.cs" Line="18" Column="50" />
+      <File FileName="BTA-CS/Entities/BTAContext.cs" Line="27" Column="6" />
+      <File FileName="BTA-CS/Entities/StopDTO.cs" Line="10" Column="1" />
+      <File FileName="BTA-CS/Entities/StopDetailDTO.cs" Line="7" Column="41" />
+      <File FileName="BTA-CS/Entities/IEntity.cs" Line="1" Column="1" />
+      <File FileName="BTA-CS/Entities/Bus.cs" Line="1" Column="1" />
+      <File FileName="BTA-CS/Entities/Stop.cs" Line="19" Column="2" />
+      <File FileName="BTAClient/Client.cs" Line="1" Column="1" />
+      <File FileName="BTAServer/Server.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.BTA-CS PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
+</Properties>
