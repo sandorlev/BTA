@@ -14,31 +14,34 @@ using BTA_CS.Entities;
 
 namespace BTA_CS.Controllers
 {
-    public class StopController : Controller
+    public class StopController : /*Controller,*/ ApiController
     {
-        private BTAContext db = new BTAContext();
+        static string myConnectionString = "server=127.0.0.1;uid=root;" +
+    "pwd=123456789;database=test";
+
+        private BTAContext db = new BTAContext(myConnectionString);
 
         // GET: api/Stops
         public IQueryable<StopDTO> GetStops()
         {
-            var stop = from b in db.Stops
+            var stop = from b in db.Stop
                        select new StopDTO()
                        {
-                            Id = b.Id,
+                            Id = b.ID,
                             Name = b.Name,
                         };
 
-            return stops;
+            return stop;
         }
 
         // GET: api/Stops/5
         [ResponseType(typeof(StopDetailDTO))]
         public async Task<IHttpActionResult> GetStop(int id)
         {
-            var stop = await db.Stops.Include(b => b.Name).Select(b =>
+            var stop = await db.Stop.Include(b => b.Name).Select(b =>
                 new StopDetailDTO()
                 {
-                    Id = b.Id,
+                    Id = b.ID,
                     Name = b.Name,
                     Latitude = b.Latitude,
                     Longitude = b.Longitude
@@ -60,7 +63,7 @@ namespace BTA_CS.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (id != stop.Id)
+            if (id != stop.ID)
             {
                 return BadRequest();
             }
@@ -95,31 +98,31 @@ namespace BTA_CS.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.Stops.Add(stop);
+            db.Stop.Add(stop);
             await db.SaveChangesAsync();
 
             db.Entry(stop).Reference(x => x.Bus).Load();
 
             var dto = new StopDTO()
             {
-                Id = stop.Id,
+                Id = stop.ID,
                 Name = stop.Name,
             };
 
-            return CreatedAtRoute("DefaultApi", new { id = stop.Id }, dto);
+            return CreatedAtRoute("DefaultApi", new { id = stop.ID }, dto);
         }
 
         // DELETE: api/Stops/5
         [ResponseType(typeof(Stop))]
         public async Task<IHttpActionResult> DeleteStop(int id)
         {
-           Stop stop = await db.Stops.FindAsync(id);
+           Stop stop = await db.Stop.FindAsync(id);
             if (stop == null)
             {
                 return NotFound();
             }
 
-            db.Stops.Remove(stop);
+            db.Stop.Remove(stop);
             await db.SaveChangesAsync();
 
             return Ok(stop);
@@ -136,7 +139,7 @@ namespace BTA_CS.Controllers
 
         private bool StopExists(int id)
         {
-            return db.Stops.Count(e => e.Id == id) > 0;
+            return db.Stop.Count(e => e.ID == id) > 0;
         }
     }
 }
