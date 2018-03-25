@@ -97,3 +97,7 @@ C:\Users\erbas\Desktop\BTA\BTA-CS\BTA-CS\obj\Debug\BTA-CS.csprojResolveAssemblyR
 C:\Users\erbas\Desktop\BTA\BTA-CS\BTA-CS\obj\Debug\BTA-CS.csproj.CoreCompileInputs.cache
 C:\Users\erbas\Desktop\BTA\BTA-CS\BTA-CS\obj\Debug\BTA-CS.dll
 C:\Users\erbas\Desktop\BTA\BTA-CS\BTA-CS\obj\Debug\BTA-CS.pdb
+C:\Users\erbas\Desktop\BTA\BTA-CS\BTA-CS\bin\Microsoft.Diagnostics.Tracing.EventSource.dll
+C:\Users\erbas\Desktop\BTA\BTA-CS\BTA-CS\bin\RabbitMQ.Client.dll
+C:\Users\erbas\Desktop\BTA\BTA-CS\BTA-CS\bin\Microsoft.Diagnostics.Tracing.EventSource.xml
+C:\Users\erbas\Desktop\BTA\BTA-CS\BTA-CS\bin\RabbitMQ.Client.xml

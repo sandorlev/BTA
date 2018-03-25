@@ -4,6 +4,8 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using System.Collections.Generic;
+using RabbitMQ.Client;
+using System.Diagnostics;
 
 namespace BTAServer
 {
@@ -59,6 +61,33 @@ namespace BTAServer
             float longitude = (float)(random.NextDouble() * 180);
             return new Location(latitude, longitude);
         }
+
+        public static void SendLocationCS(Location location)
+        {
+            var factory = new ConnectionFactory() { HostName = "localhost" };
+            using (var connection = factory.CreateConnection())
+            using (var channel = connection.CreateModel())
+            {
+                channel.QueueDeclare(queue: "busLocationMQ",
+                                     durable: false,
+                                     exclusive: false,
+                                     autoDelete: false,
+                                     arguments: null);
+
+                string message = location.Latitude.ToString() + " " +location.Longitude.ToString() ;
+                var body = Encoding.UTF8.GetBytes(message);
+
+                channel.BasicPublish(exchange: "",
+                                     routingKey: "busLocationMQ",
+                                     basicProperties: null,
+                                     body: body);
+                Trace.WriteLine(" [x] Sent {0}", message);
+            }
+
+            Trace.WriteLine(" Press [enter] to exit.");
+            //Trace.ReadLine();
+        }
+    
 
         public static void StartListening(IPAddress address, int port)
         {
@@ -187,6 +216,8 @@ namespace BTAServer
             IPAddress host = Dns.GetHostAddresses("localhost")[0];
             int port = 7777;
             StartListening(host, port);
+
+            SendLocationCS(GetLocation());
         }
     }
 }
