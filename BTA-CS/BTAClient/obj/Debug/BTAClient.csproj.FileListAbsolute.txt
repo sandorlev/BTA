@@ -1,0 +1,77 @@
+/Users/emanuelnae/Desktop/BusTransportationApp/BTA-CS/BTAClient/bin/Debug/BTAClient.exe.config
+/Users/emanuelnae/Desktop/BusTransportationApp/BTA-CS/BTAClient/bin/Debug/BTAClient.exe
+/Users/emanuelnae/Desktop/BusTransportationApp/BTA-CS/BTAClient/bin/Debug/BTAClient.pdb
+/Users/emanuelnae/Desktop/BusTransportationApp/BTA-CS/BTAClient/bin/Debug/BTAServer.exe
+/Users/emanuelnae/Desktop/BusTransportationApp/BTA-CS/BTAClient/bin/Debug/BTAServer.pdb
+/Users/emanuelnae/Desktop/BusTransportationApp/BTA-CS/BTAClient/bin/Debug/BTAServer.exe.config
+/Users/emanuelnae/Desktop/BusTransportationApp/BTA-CS/BTAClient/obj/Debug/BTAClient.csprojResolveAssemblyReference.cache
+/Users/emanuelnae/Desktop/BusTransportationApp/BTA-CS/BTAClient/obj/Debug/BTAClient.csproj.CoreCompileInputs.cache
+/Users/emanuelnae/Desktop/BusTransportationApp/BTA-CS/BTAClient/obj/Debug/BTAClient.exe
+/Users/emanuelnae/Desktop/BusTransportationApp/BTA-CS/BTAClient/obj/Debug/BTAClient.pdb
+C:\Users\erbas\Google Drive\FILS\Year III\2nd Semester\IIa\Net-Computing\Project\BusTransportationApp\BTA\BTA-CS\BTAClient\bin\Debug\BTAClient.exe.config
+C:\Users\erbas\Google Drive\FILS\Year III\2nd Semester\IIa\Net-Computing\Project\BusTransportationApp\BTA\BTA-CS\BTAClient\bin\Debug\BTAClient.exe
+C:\Users\erbas\Google Drive\FILS\Year III\2nd Semester\IIa\Net-Computing\Project\BusTransportationApp\BTA\BTA-CS\BTAClient\bin\Debug\BTAClient.pdb
+C:\Users\erbas\Google Drive\FILS\Year III\2nd Semester\IIa\Net-Computing\Project\BusTransportationApp\BTA\BTA-CS\BTAClient\bin\Debug\BTAServer.exe
+C:\Users\erbas\Google Drive\FILS\Year III\2nd Semester\IIa\Net-Computing\Project\BusTransportationApp\BTA\BTA-CS\BTAClient\bin\Debug\BTAServer.pdb
+C:\Users\erbas\Google Drive\FILS\Year III\2nd Semester\IIa\Net-Computing\Project\BusTransportationApp\BTA\BTA-CS\BTAClient\bin\Debug\BTAServer.exe.config
+C:\Users\erbas\Google Drive\FILS\Year III\2nd Semester\IIa\Net-Computing\Project\BusTransportationApp\BTA\BTA-CS\BTAClient\obj\Debug\BTAClient.csprojResolveAssemblyReference.cache
+C:\Users\erbas\Google Drive\FILS\Year III\2nd Semester\IIa\Net-Computing\Project\BusTransportationApp\BTA\BTA-CS\BTAClient\obj\Debug\BTAClient.csproj.CoreCompileInputs.cache
+C:\Users\erbas\Google Drive\FILS\Year III\2nd Semester\IIa\Net-Computing\Project\BusTransportationApp\BTA\BTA-CS\BTAClient\obj\Debug\BTAClient.exe
+C:\Users\erbas\Google Drive\FILS\Year III\2nd Semester\IIa\Net-Computing\Project\BusTransportationApp\BTA\BTA-CS\BTAClient\obj\Debug\BTAClient.pdb
+C:\Users\erbas\Google Drive\FILS\Year III\2nd Semester\IIa\Net-Computing\Project\BusTransportationApp\BTA\BTA-CS\BTAClient\bin\Debug\Newtonsoft.Json.dll
+C:\Users\erbas\Google Drive\FILS\Year III\2nd Semester\IIa\Net-Computing\Project\BusTransportationApp\BTA\BTA-CS\BTAClient\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\erbas\Google Drive\FILS\Year III\2nd Semester\IIa\Net-Computing\Project\BusTransportationApp\BTA\BTA-CS\BTAClient\bin\Debug\System.Web.Http.dll
+C:\Users\erbas\Google Drive\FILS\Year III\2nd Semester\IIa\Net-Computing\Project\BusTransportationApp\BTA\BTA-CS\BTAClient\bin\Debug\System.Web.Http.SelfHost.dll
+C:\Users\erbas\Google Drive\FILS\Year III\2nd Semester\IIa\Net-Computing\Project\BusTransportationApp\BTA\BTA-CS\BTAClient\bin\Debug\System.Web.Http.WebHost.dll
+C:\Users\erbas\Google Drive\FILS\Year III\2nd Semester\IIa\Net-Computing\Project\BusTransportationApp\BTA\BTA-CS\BTAClient\bin\Debug\Newtonsoft.Json.xml
+C:\Users\erbas\Google Drive\FILS\Year III\2nd Semester\IIa\Net-Computing\Project\BusTransportationApp\BTA\BTA-CS\BTAClient\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\erbas\Google Drive\FILS\Year III\2nd Semester\IIa\Net-Computing\Project\BusTransportationApp\BTA\BTA-CS\BTAClient\bin\Debug\System.Web.Http.xml
+C:\Users\erbas\Google Drive\FILS\Year III\2nd Semester\IIa\Net-Computing\Project\BusTransportationApp\BTA\BTA-CS\BTAClient\bin\Debug\System.Web.Http.SelfHost.xml
+C:\Users\erbas\Google Drive\FILS\Year III\2nd Semester\IIa\Net-Computing\Project\BusTransportationApp\BTA\BTA-CS\BTAClient\bin\Debug\System.Web.Http.WebHost.xml
+C:\Users\erbas\Google Drive\FILS\Year III\2nd Semester\IIa\Net-Computing\Project\BusTransportationApp\BTA\BTA-CS\BTAClient\bin\Debug\EntityFramework.dll
+C:\Users\erbas\Google Drive\FILS\Year III\2nd Semester\IIa\Net-Computing\Project\BusTransportationApp\BTA\BTA-CS\BTAClient\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\erbas\Google Drive\FILS\Year III\2nd Semester\IIa\Net-Computing\Project\BusTransportationApp\BTA\BTA-CS\BTAClient\bin\Debug\EntityFramework.xml
+C:\Users\erbas\Google Drive\FILS\Year III\2nd Semester\IIa\Net-Computing\Project\BusTransportationApp\BTA\BTA-CS\BTAClient\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\erbas\Desktop\BTA\BTA-CS\BTAClient\bin\Debug\ApplicationInsights.config
+C:\Users\erbas\Desktop\BTA\BTA-CS\BTAClient\bin\Debug\BTAClient.exe.config
+C:\Users\erbas\Desktop\BTA\BTA-CS\BTAClient\bin\Debug\BTAClient.exe
+C:\Users\erbas\Desktop\BTA\BTA-CS\BTAClient\bin\Debug\BTAClient.pdb
+C:\Users\erbas\Desktop\BTA\BTA-CS\BTAClient\bin\Debug\BTAServer.exe
+C:\Users\erbas\Desktop\BTA\BTA-CS\BTAClient\bin\Debug\EntityFramework.dll
+C:\Users\erbas\Desktop\BTA\BTA-CS\BTAClient\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\erbas\Desktop\BTA\BTA-CS\BTAClient\bin\Debug\Microsoft.AI.Agent.Intercept.dll
+C:\Users\erbas\Desktop\BTA\BTA-CS\BTAClient\bin\Debug\Microsoft.AI.DependencyCollector.dll
+C:\Users\erbas\Desktop\BTA\BTA-CS\BTAClient\bin\Debug\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\erbas\Desktop\BTA\BTA-CS\BTAClient\bin\Debug\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\erbas\Desktop\BTA\BTA-CS\BTAClient\bin\Debug\Microsoft.AI.Web.dll
+C:\Users\erbas\Desktop\BTA\BTA-CS\BTAClient\bin\Debug\Microsoft.AI.WindowsServer.dll
+C:\Users\erbas\Desktop\BTA\BTA-CS\BTAClient\bin\Debug\Microsoft.ApplicationInsights.dll
+C:\Users\erbas\Desktop\BTA\BTA-CS\BTAClient\bin\Debug\Microsoft.AspNet.TelemetryCorrelation.dll
+C:\Users\erbas\Desktop\BTA\BTA-CS\BTAClient\bin\Debug\Newtonsoft.Json.dll
+C:\Users\erbas\Desktop\BTA\BTA-CS\BTAClient\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\erbas\Desktop\BTA\BTA-CS\BTAClient\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\erbas\Desktop\BTA\BTA-CS\BTAClient\bin\Debug\System.Web.Http.dll
+C:\Users\erbas\Desktop\BTA\BTA-CS\BTAClient\bin\Debug\System.Web.Http.SelfHost.dll
+C:\Users\erbas\Desktop\BTA\BTA-CS\BTAClient\bin\Debug\System.Web.Http.WebHost.dll
+C:\Users\erbas\Desktop\BTA\BTA-CS\BTAClient\bin\Debug\BTAServer.pdb
+C:\Users\erbas\Desktop\BTA\BTA-CS\BTAClient\bin\Debug\BTAServer.exe.config
+C:\Users\erbas\Desktop\BTA\BTA-CS\BTAClient\bin\Debug\EntityFramework.xml
+C:\Users\erbas\Desktop\BTA\BTA-CS\BTAClient\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\erbas\Desktop\BTA\BTA-CS\BTAClient\bin\Debug\Microsoft.AI.DependencyCollector.xml
+C:\Users\erbas\Desktop\BTA\BTA-CS\BTAClient\bin\Debug\Microsoft.AI.Web.xml
+C:\Users\erbas\Desktop\BTA\BTA-CS\BTAClient\bin\Debug\Microsoft.AI.WindowsServer.xml
+C:\Users\erbas\Desktop\BTA\BTA-CS\BTAClient\bin\Debug\Microsoft.AspNet.TelemetryCorrelation.xml
+C:\Users\erbas\Desktop\BTA\BTA-CS\BTAClient\bin\Debug\Newtonsoft.Json.xml
+C:\Users\erbas\Desktop\BTA\BTA-CS\BTAClient\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\erbas\Desktop\BTA\BTA-CS\BTAClient\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\erbas\Desktop\BTA\BTA-CS\BTAClient\bin\Debug\System.Web.Http.xml
+C:\Users\erbas\Desktop\BTA\BTA-CS\BTAClient\bin\Debug\System.Web.Http.SelfHost.xml
+C:\Users\erbas\Desktop\BTA\BTA-CS\BTAClient\bin\Debug\System.Web.Http.WebHost.xml
+C:\Users\erbas\Desktop\BTA\BTA-CS\BTAClient\obj\Debug\BTAClient.csprojResolveAssemblyReference.cache
+C:\Users\erbas\Desktop\BTA\BTA-CS\BTAClient\obj\Debug\BTAClient.csproj.CoreCompileInputs.cache
+C:\Users\erbas\Desktop\BTA\BTA-CS\BTAClient\obj\Debug\BTAClient.exe
+C:\Users\erbas\Desktop\BTA\BTA-CS\BTAClient\obj\Debug\BTAClient.pdb
+C:\Users\erbas\Desktop\BTA\BTA-CS\BTAClient\bin\Debug\Microsoft.Diagnostics.Tracing.EventSource.dll
+C:\Users\erbas\Desktop\BTA\BTA-CS\BTAClient\bin\Debug\RabbitMQ.Client.dll
+C:\Users\erbas\Desktop\BTA\BTA-CS\BTAClient\bin\Debug\Microsoft.Diagnostics.Tracing.EventSource.xml
+C:\Users\erbas\Desktop\BTA\BTA-CS\BTAClient\bin\Debug\RabbitMQ.Client.xml
