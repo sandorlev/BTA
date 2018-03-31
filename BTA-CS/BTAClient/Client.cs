@@ -1,16 +1,14 @@
 ﻿using System;
 using System.Net;
 using System.Net.Sockets;
-using System.Threading;
-using System.Text;
 
 namespace BTAClient
 {
     public class Client
     {
-        public static BTAServer.Location location = new BTAServer.Location();
+        private static BTAServer.Location location = new BTAServer.Location();
 
-        public static void ConnectToServer(IPAddress address, int port)
+        private static void ConnectToServer(IPAddress address, int port)
         {
             IPEndPoint endpoint = new IPEndPoint(address, port);
             Socket socket = new Socket(address.AddressFamily, SocketType.Stream, ProtocolType.Tcp);

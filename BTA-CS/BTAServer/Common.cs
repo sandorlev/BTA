@@ -26,6 +26,13 @@ namespace BTAServer
             return String.Format("{0:N6}:{1:N6}", Latitude, Longitude);
         }
 
+        public void FromString(String str)
+        {
+            var tokens = str.Split(':');
+            Latitude = float.Parse(tokens[0]);
+            Longitude = float.Parse(tokens[1]);
+        }
+
         public Byte[] ToBytes()
         {
             return Encoding.ASCII.GetBytes(ToString());
@@ -33,10 +40,14 @@ namespace BTAServer
 
         public void FromBytes(Byte[] bytes)
         {
-            Console.WriteLine(Encoding.ASCII.GetString(bytes));
-            String[] tokens = Encoding.ASCII.GetString(bytes).Split(':');
+            var tokens = Encoding.ASCII.GetString(bytes).Split(':');
             Latitude = float.Parse(tokens[0]);
             Longitude = float.Parse(tokens[1]);
+        }
+
+        public Location Duplicate()
+        {
+            return new Location(Latitude, Longitude);
         }
 
         public float Latitude { get; set; }

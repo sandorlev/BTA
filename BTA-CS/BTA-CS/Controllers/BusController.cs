@@ -4,12 +4,8 @@ using System.Threading.Tasks;
 using BTA_CS.Entities;
 using System.Web.Http;
 using System.Web.Http.Description;
-using System;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
-using RabbitMQ.Client;
-using RabbitMQ.Client.Events;
-using System.Text;
 
 namespace BTA_CS.Controllers
 {
@@ -19,35 +15,6 @@ namespace BTA_CS.Controllers
     "pwd=123456789;database=test";
 
         private BTAContext db = new BTAContext(myConnectionString);
-
-        public static void getBusLocation()
-        {
-            var factory = new ConnectionFactory() { HostName = "localhost" };
-            using (var connection = factory.CreateConnection())
-            using (var channel = connection.CreateModel())
-            {
-                channel.QueueDeclare(queue: "busLocationMQ",
-                                     durable: false,
-                                     exclusive: false,
-                                     autoDelete: false,
-                                     arguments: null);
-
-                var consumer = new EventingBasicConsumer(channel);
-                consumer.Received += (model, ea) =>
-                {
-                    var body = ea.Body;
-                    var message = Encoding.UTF8.GetString(body);
-                    //Console.WriteLine(" [x] Received {0}", message);
-                };
-                channel.BasicConsume(queue: "busLocationMQ",
-                                     autoAck: true,
-                                     consumer: consumer);
-
-                //Console.WriteLine(" Press [enter] to exit.");
-                //Console.ReadLine();
-            }
-        }
-
 
         // GET: api/Bus
         public IQueryable<Bus> GetBuses()
@@ -146,11 +113,6 @@ namespace BTA_CS.Controllers
         private bool BusExists(int id)
         {
             return db.Bus.Count(e => e.ID == id) > 0;
-        }
-
-        public static void Main()
-        {
-            getBusLocation();
         }
     }
 }

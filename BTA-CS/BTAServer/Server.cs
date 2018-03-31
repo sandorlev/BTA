@@ -1,18 +1,16 @@
 ﻿using System;
 using System.Net;
 using System.Net.Sockets;
-using System.Text;
-using System.Threading;
 using System.Collections.Generic;
 using RabbitMQ.Client;
-using System.Diagnostics;
 
 namespace BTAServer
 {
     class ServerClient
     {
-        public static readonly int maxRetries = 3;
-        public static readonly int timeout = 1;
+        private static readonly DateTime epoch = new DateTime(1970, 1, 1);
+        private static readonly int maxRetries = 3;
+        private static readonly int timeout = 1;
 
         public Socket ClientSocket { get; set; }
         private int retries = maxRetries;
@@ -37,7 +35,7 @@ namespace BTAServer
 
         public bool Ready()
         {
-            int timestamp = (int)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
+            int timestamp = (int)(DateTime.UtcNow.Subtract(epoch)).TotalSeconds;
             return Healthy() || timestamp - lastRetry > timeout;
         }
 
@@ -45,14 +43,22 @@ namespace BTAServer
         {
             if (--retries == 0)
                 return true;
-            lastRetry = (int)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
+            lastRetry = (int)(DateTime.UtcNow.Subtract(epoch)).TotalSeconds;
             return false;
         }
     }
 
     class Server
     {
+        private static readonly int busNumber = 36;
+
+        // Sockets clients
         private static Dictionary<IPEndPoint, ServerClient> clients = new Dictionary<IPEndPoint, ServerClient>();
+        // RabbitMQ
+        private static ConnectionFactory factory = null;
+        private static IConnection connection = null;
+        private static IModel channel = null;
+        private static String queueName = null;
 
         // XXX - returns random location atm
         private static readonly Random random = new Random();
@@ -62,38 +68,13 @@ namespace BTAServer
             return new Location(latitude, longitude);
         }
 
-        public static void SendLocationCS(Location location)
-        {
-            var factory = new ConnectionFactory() { HostName = "localhost" };
-            using (var connection = factory.CreateConnection())
-            using (var channel = connection.CreateModel())
-            {
-                channel.QueueDeclare(queue: "busLocationMQ",
-                                     durable: false,
-                                     exclusive: false,
-                                     autoDelete: false,
-                                     arguments: null);
-
-                string message = location.Latitude.ToString() + " " +location.Longitude.ToString() ;
-                var body = Encoding.UTF8.GetBytes(message);
-
-                channel.BasicPublish(exchange: "",
-                                     routingKey: "busLocationMQ",
-                                     basicProperties: null,
-                                     body: body);
-                Trace.WriteLine(" [x] Sent {0}", message);
-            }
-
-            Trace.WriteLine(" Press [enter] to exit.");
-            //Trace.ReadLine();
-        }
-    
-
         public static void StartListening(IPAddress address, int port)
         {
             Byte[] bytes = new Byte[StateObject.bufferSize];
             IPEndPoint endpoint = new IPEndPoint(address, port);
             Socket listener = new Socket(address.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
+
+            Location location = null;
 
             try
             {
@@ -102,8 +83,10 @@ namespace BTAServer
 
                 while (true)
                 {
+                    location = GetLocation();
                     listener.BeginAccept(new AsyncCallback(AcceptClient), listener);
-                    TransmitLocation();
+                    TransmitLocationToClients(location);
+                    QueueLocation(location);
                     System.Threading.Thread.Sleep(1000);
                 }
             }
@@ -123,9 +106,8 @@ namespace BTAServer
             Console.WriteLine("New client at {0}", endpoint);
         }
 
-        private static void TransmitLocation()
+        private static void TransmitLocationToClients(Location location)
         {
-            Location location = GetLocation();
             Byte[] bytes = location.ToBytes();
             foreach (KeyValuePair<IPEndPoint, ServerClient> pair in clients)
             {
@@ -145,29 +127,18 @@ namespace BTAServer
                     );
                     client.ResetHealth();
                 }
-                catch (SocketException e)
+                catch (SocketException)
                 {
                     Console.WriteLine("Failed to send to client {0}", pair.Key);
                     if (client.Fail())
                     {
-                        Console.WriteLine("banned lol");
+                        Console.WriteLine("Client removed");
                         clients.Remove(pair.Key);
                         break;
                     }
                 }
             }
         }
-
-        //private static void SendString(Socket handler, String data)
-        //{
-        //    byte[] byteData = Encoding.ASCII.GetBytes(data);
-        //    handler.BeginSend(
-        //        byteData, 0,
-        //        byteData.Length, 0,
-        //        new AsyncCallback(WriteToClient),
-        //        handler
-        //    );
-        //}
 
         private static void WriteToClient(IAsyncResult result)
         {
@@ -182,42 +153,42 @@ namespace BTAServer
             }
         }
 
-        //    private static void ReadFromClient(IAsyncResult result)
-        //    {
-        //        String content = String.Empty;
-        //        ClientMessage message = (ClientMessage)result.AsyncState;
-        //        Socket handler = message.socket;
-
-        //        int bytesRead = handler.EndReceive(result);
-
-        //        if (bytesRead > 0)
-        //        {
-        //            message.sb.Append(Encoding.ASCII.GetString(message.buffer, 0, bytesRead));
-        //            content = message.sb.ToString();
-        //            if (content.IndexOf("<EOF>") > -1)
-        //            {
-        //                Console.WriteLine("Read {0} bytes. Data: {1}", content.Length, content);
-        //                SendString(handler, content);
-        //            }
-        //            else
-        //            {
-        //                handler.BeginReceive(
-        //                    message.buffer, 0,
-        //                    ClientMessage.bufferSize, 0,
-        //                    new AsyncCallback(ReadFromClient),
-        //                    message
-        //                );
-        //            }
-        //        }
-        //    }
-
-        static void Main(string[] args)
+        private static void InitMessageQueue(String name, String hostName)
         {
-            IPAddress host = Dns.GetHostAddresses("localhost")[0];
-            int port = 7777;
-            StartListening(host, port);
+            queueName = name;
+            factory = new ConnectionFactory() { HostName = hostName };
+            connection = factory.CreateConnection();
+            channel = connection.CreateModel();
 
-            SendLocationCS(GetLocation());
+            channel.QueueDeclare(
+                queue: queueName,
+                durable: false,
+                exclusive: false,
+                autoDelete: false,
+                arguments: null);
+        }
+
+        private static void QueueLocation(Location location)
+        {
+            var body = System.Text.Encoding.ASCII.GetBytes(busNumber + "|" + location.ToString());
+
+            channel.BasicPublish(
+                exchange: "",
+                routingKey: queueName,
+                basicProperties: null,
+                body: body);
+        }
+
+        static void Main(String[] args)
+        {
+            const String hostName = "localhost";
+            IPAddress host = Dns.GetHostAddresses(hostName)[0];
+            int port = 7777;
+
+            // Set up RabbitMQ connection
+            InitMessageQueue("BTA", hostName);
+            // Start socket server
+            StartListening(host, port);
         }
     }
 }
